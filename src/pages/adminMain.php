@@ -86,19 +86,19 @@
 	<header>
 		<img class="logo" src="../../resources/OverseerTransparent.png" style="width: 100px;" alt="logo">
 		
-		<form method="post" action="/capstone-project-mohcamanagement/src/pages/inventoryLog.php">
+		<form method="post" action="inventoryLog.php">
 			<button class="button NavButton" >Inventory Log</button>
 		</form>
 
-		<form method="post" action="/capstone-project-mohcamanagement/src/pages/scheduleGeneration.php">
+		<form method="post" action="scheduleGeneration.php">
 			<button class="button NavButton" >Schedule Generation</button>
 		</form>
 
-		<form method="post" action="/capstone-project-mohcamanagement/src/pages/adminCreateUser.php">
+		<form method="post" action="adminCreateUser.php">
 			<button class="button NavButton" >Create Users</button>
 		</form>
 
-		<form method="post" action="/capstone-project-mohcamanagement/src/index.html">
+		<form method="post" action="../index.html">
 			<button class="button button0" onclick="location.href='/capstone-project-mohcamanagement/src/index.html'">Log Out</button>
 		</form>
 	</header>
