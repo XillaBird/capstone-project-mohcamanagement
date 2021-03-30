@@ -5,7 +5,7 @@ capstone-project-mohcamanagement created by GitHub Classroom
 
 <img src="https://motionarray.imgix.net/preview-397057-8gWZWGbXcZOzqybT-large.jpg?w=250&q=60&fit=max&auto=format" width="310" align="left" />
 
-Testing new stuff!<br>
+
 Name: Bob Johnson<br>
 Occupation: Manager<br>
 Screening Questions:<br>

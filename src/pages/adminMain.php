@@ -14,7 +14,7 @@
 	<head>
 		<title>Admin Main Page</title>
 
-		<link rel="stylesheet" type="text/css" href="../style/style.css">
+		<link rel="stylesheet" href="../style/style.css?<?php echo time(); ?>">
 	</head>
 
  	<!-- CSS might want to add to the style sheet -->
@@ -86,19 +86,19 @@
 	<header>
 		<img class="logo" src="../../resources/OverseerTransparent.png" style="width: 100px;" alt="logo">
 		
-		<form method="post" action="inventoryLog.php">
+		<form method="post" action="/capstone-project-mohcamanagement/src/pages/inventoryLog.php">
 			<button class="button NavButton" >Inventory Log</button>
 		</form>
 
-		<form method="post" action="scheduleGeneration.php">
+		<form method="post" action="/capstone-project-mohcamanagement/src/pages/scheduleGeneration.php">
 			<button class="button NavButton" >Schedule Generation</button>
 		</form>
 
-		<form method="post" action="adminCreateUser.php">
+		<form method="post" action="/capstone-project-mohcamanagement/src/pages/adminCreateUser.php">
 			<button class="button NavButton" >Create Users</button>
 		</form>
 
-		<form method="post" action="../index.html">
+		<form method="post" action="/capstone-project-mohcamanagement/src/index.html">
 			<button class="button button0" onclick="location.href='/capstone-project-mohcamanagement/src/index.html'">Log Out</button>
 		</form>
 	</header>
