@@ -1,8 +1,12 @@
+from ScheduledDate import *
+
 class User:
-	def __init__(self, user, cursor):
+	def __init__(self, user, cursor, startDict, endDict):
 		self.userWeight = 0
 		self.totalHours = 0
 		self.hoursLeft = 0
+		self.startDict = startDict
+		self.endDict = endDict
 		self.name = user[0]
 		self.pin = user[1]
 		self.userSchedule = {"Monday" : list(), 
@@ -30,13 +34,15 @@ class User:
 	def userScheduleAdd(self, element):
 		self.userSchedule.append(element)
 
-	def convertShiftToHours(self, shift):
-		print("Todo")
+	def calculateTotalHoursRequested(self):
+		for i in range(len(self.userSchedule)):
+			for j in range(len(list(self.userSchedule.values())[i])):
+				shift = list(self.userSchedule.values())[i][j]
+				startTime = self.startDict.get(shift)
+				endTime = self.endDict.get(shift)
 
-	def calculateHoursWorked(self):
-		for i in self.userSchedule:
-			for j in i:
-				print("todo")
+				print(startTime)
+				print(endTime)
 
 	def calculateUserWeight(self):
 		print("Implement function to calculate weight")

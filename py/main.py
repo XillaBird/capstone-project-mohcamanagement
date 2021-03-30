@@ -1,5 +1,4 @@
 import sqlite3
-from ScheduledDate import *
 from User import *
 
 def main():
@@ -10,11 +9,18 @@ def main():
 
 	cur.execute("SELECT * FROM users")
 
+
+	userList = list()
+
 	userData = cur.fetchone()
 	while userData != None:
 		if userData[2] == 0:
-			user = User(userData, cur)
+			userList.append(User(userData, cur, date.getStartTimeDictionary(), date.getEndTimeDictionary()))
 		userData = cur.fetchone()
+
+
+
+	userList[0].calculateTotalHoursRequested()
 
 
 
