@@ -40,6 +40,17 @@ class User:
 				shift = list(self.userSchedule.values())[i][j]
 				startTime = self.startDict.get(shift)
 				endTime = self.endDict.get(shift)
+				
+				startHours,startMinutes = startTime.split(':', 1)
+                #Start hour: 6:30
+                #Splits into 6 & 30
+               			endHours, endMinutes = endTime.split(':', 1)
+                		self.totalHours = endHours-startHours
+                		tMinutes = endMinutes-startMinutes
+                		if(tMinutes<0):
+                    			self.totalHours-=0.5
+                		if(tMinutes>0):
+                    			self.totalHours+=0.5
 
 				print(startTime)
 				print(endTime)
