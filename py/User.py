@@ -1,9 +1,28 @@
 class User:
-	def __init__(self)
+	def __init__(self, user, cursor):
 		self.userWeight = 0
 		self.totalHours = 0
 		self.hoursLeft = 0
-		self.userSchedule = list(list(), list(), list(), list(), list(), list(), list())
+		self.name = user[0]
+		self.pin = user[1]
+		self.userSchedule = {"Monday" : list(), 
+							"Tuesday" : list(), 
+							"Wednesday" : list(),
+							"Thursday" : list(),
+							"Friday" : list(),
+							"Saturday" : list(),
+							"Sunday" : list()}
+
+
+		cursor.execute('SELECT Day, ShiftName FROM availability WHERE Pin=?', (self.pin,))
+
+		data = cursor.fetchall()
+
+		for i in range(len(data)):
+			if data[i][1] == None: self.userSchedule.get(data[i][0]).append("None")
+			else: self.userSchedule.get(data[i][0]).append(data[i][1])
+
+		print(self.userSchedule)
 
 	def setUserWeight(self, weight):
 		self.userWeight = weight
@@ -17,6 +36,7 @@ class User:
 	def calculateHoursWorked(self):
 		for i in self.userSchedule:
 			for j in i:
+				print("todo")
 
 	def calculateUserWeight(self):
 		print("Implement function to calculate weight")

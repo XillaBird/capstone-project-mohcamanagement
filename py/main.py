@@ -1,5 +1,6 @@
 import sqlite3
 from ScheduledDate import *
+from User import *
 
 def main():
 	con = sqlite3.connect('overseer.db')
@@ -7,11 +8,14 @@ def main():
 	
 	date = ScheduledDate(cur)
 
-	dict = date.getEndTimeDictionary()
+	cur.execute("SELECT * FROM users")
 
-	testStart = dict.get("1st", "invalid")
+	userData = cur.fetchone()
+	while userData != None:
+		if userData[2] == 0:
+			user = User(userData, cur)
+		userData = cur.fetchone()
 
-	print(str(testStart))
 
 
 	con.close()
